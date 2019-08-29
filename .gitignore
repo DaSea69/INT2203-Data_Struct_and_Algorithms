@@ -1,0 +1,23 @@
+# ignore java compiler file
+
+*.class
+# cache
+
+*.swp
+
+
+# ignore complier file other
+
+*.o
+*.a
+*.lo
+*.oa
+
+# workspace file
+
+*.code-workspace
+
+# vscode configure
+
+/.vscode/
+/.vscode/*
