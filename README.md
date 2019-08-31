@@ -11,4 +11,4 @@ Here is a list of my university assignments for my 2nd\'s university in DSA.
 
 ---
 Bien Nguyen Dinh (Mr.)  
-University of Enginering and Technology, Vietnam National University.
+University of Engineering and Technology, Vietnam National University.

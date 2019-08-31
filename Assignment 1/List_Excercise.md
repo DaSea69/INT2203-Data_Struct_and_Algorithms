@@ -10,7 +10,7 @@
 
 ---
 Bien Nguyen Dinh (Mr.)  
-University of Enginering and Technology, Vietnam National University.
+University of Engineering and Technology, Vietnam National University.
 
 [Ex1]: ./TenHelloWorlds.java "Ten Hello World"
 [Ex2]: ./Ex2.md "Excercise 2"
