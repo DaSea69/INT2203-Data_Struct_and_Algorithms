@@ -13,6 +13,10 @@
 *.lo
 *.oa
 
+# input and output check file
+*.inp
+*.out
+
 # workspace file
 
 *.code-workspace
