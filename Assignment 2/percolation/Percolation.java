@@ -43,8 +43,12 @@ public class Percolation {
         if (status[row][col] == Status.OPENED) {
             return ;
         }
-        if (row == 1) updateUpRow = true;
-        if (row == n) updateLoRow = true;
+        if (row == 1) {
+            sites.union(virtualUpperSite, hashID(row, col));
+        }
+        if (row == n) {
+            sites.union(virtualLowerSite, hashID(row, col));
+        }
         status[row][col] = Status.OPENED;
         numberOfSiteIsOpens++;
         for(int i = 0; i < 4; i++) {
@@ -69,13 +73,6 @@ public class Percolation {
             throw new IllegalArgumentException("Out of size");
         if(!isOpen(row, col))
             return false;
-        if (updateUpRow) {
-            for(int i = 1; i <= n; i++) {
-                sites.union(virtualUpperSite, hashID(row, col));
-            }
-            updateUpRow = false;
-        }
-
         return sites.connected(hashID(row, col), virtualUpperSite);
     }
 
@@ -84,19 +81,6 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        if (updateUpRow) {
-            for(int i = 1; i <= n; i++) {
-                sites.union(virtualUpperSite, hashID(1, i));
-            }
-            updateUpRow = false;
-        }
-
-        if (updateLoRow) {
-            for(int i = 1; i <= n; i++) {
-                sites.union(virtualLowerSite, hashID(n, i));
-            }
-            updateLoRow = false;
-        }
         return sites.connected(virtualLowerSite, virtualUpperSite);
     }
 
