@@ -7,7 +7,8 @@
 
 
 # ignore complier file other
-
+bin/
+bin/*
 *.o
 *.a
 *.lo
@@ -23,5 +24,13 @@
 
 # vscode configure
 
-/.vscode/
-/.vscode/*
+.vscode/
+.vscode/*
+*.classpath
+*.project
+.settings/
+.settings/*
+.idea/
+.idea/*
+*.iml
+
