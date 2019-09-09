@@ -6,10 +6,9 @@ public class Percolation {
     final private int[] rowMove = {0, 1, -1, 0};
     final private int virtualUpperSite, virtualLowerSite;
 
-    private enum Status {
+    enum Status {
         BLOCKED, OPENED
     }
-    private boolean updateUpRow, updateLoRow;
     private Status[][] status;
     private int n;
     private int numberOfSiteIsOpens;
@@ -29,8 +28,6 @@ public class Percolation {
         }
         virtualLowerSite = n * n;
         virtualUpperSite = n * n + 1;
-        updateLoRow = false;
-        updateUpRow = false;
     }
 
     private int hashID(int row, int col) {
