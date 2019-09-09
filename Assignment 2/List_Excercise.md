@@ -1,10 +1,11 @@
-# List Excercise finsihed in Assignment 1
+# List Excercise finsihed in Assignment 2
 * Coursera Assignment : [Percolation][percolation] and [PercolationStats][percolationStats]
 * UFCLent(2) : [UFClient][UFClient]
-* [Excersice 3.19][Kary]
-* [Excersice 3.28][GCD]
-* [Excersice 3.35][PrimeCounter]
-* [Excersice 3.38][Exp]
+* [Excercise 3.19][Kary]
+* [Excercise 3.28][GCD]
+* [Excercise 3.35][PrimeCounter]
+* [Excercise 3.38][Exp]
+* Updating...
 
 ---
 Bien Nguyen Dinh (Mr.)  
