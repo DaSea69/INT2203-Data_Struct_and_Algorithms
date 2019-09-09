@@ -34,7 +34,7 @@ public class PercolationStats {
                 break;
         }
         //System.out.printf("%d / %d \n", percolation.numberOfOpenSites(), n * n);
-        return (double) percolation.numberOfOpenSites()/(n * n);
+        return (double) percolation.numberOfOpenSites() / (n * n);
     }
 
     private void getResult() {
