@@ -10,18 +10,18 @@ public class UFClient {
         int q, p;
         int countCouple = 0;
         while (!StdIn.isEmpty()) {
-            countCouple++;
 
             q = StdIn.readInt();
             p = StdIn.readInt();
+            countCouple++;
+
+            if (!unionUF.connected(p, q)) {
+                unionUF.union(p, q);
+            }
 
             if (unionUF.count() == 1) {
                 StdOut.println(countCouple);
                 return ;
-            }
-
-            if (!unionUF.connected(p, q)) {
-                unionUF.union(q, p);
             }
         }
         StdOut.println("FAILED");
