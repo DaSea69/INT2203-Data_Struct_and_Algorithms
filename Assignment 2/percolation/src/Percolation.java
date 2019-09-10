@@ -5,23 +5,25 @@ public class Percolation {
     final private int[] colMove = {1, 0, 0, -1};
     final private int[] rowMove = {0, 1, -1, 0};
     final private int virtualUpperSite, virtualLowerSite;
-    private boolean[][] status;
+
+    private enum Status {
+        BLOCKED, OPENED
+    }
+    private Status[][] status;
     private int n;
     private int numberOfSiteIsOpens;
-    final private boolean OPENED = true;
-    final private boolean BLOCKED = false;
 
     public Percolation(int n) {
         if(n <= 0)
             throw new IllegalArgumentException();
         sites = new WeightedQuickUnionUF(n * n + 2);
-        status = new boolean[n + 1][n + 1];
+        status = new Status[n + 1][n + 1];
         numberOfSiteIsOpens = 0;
         this.n = n;
 
         for(int i = 1; i <= n; i++) {
             for(int j = 1; j <= n; j++) {
-                status[i][j] = BLOCKED;
+                status[i][j] = Status.BLOCKED;
             }
         }
         virtualLowerSite = n * n;
@@ -35,7 +37,7 @@ public class Percolation {
     public void open(int row, int col) {
         if(row > n || row < 1 || col > n || col < 1)
             throw new IllegalArgumentException("Out of size");
-        if (isOpen(row, col)) {
+        if (status[row][col] == Status.OPENED) {
             return ;
         }
         if (row == 1) {
@@ -44,13 +46,13 @@ public class Percolation {
         if (row == n) {
             sites.union(virtualLowerSite, hashID(row, col));
         }
-        status[row][col] = OPENED;
+        status[row][col] = Status.OPENED;
         numberOfSiteIsOpens++;
         for(int i = 0; i < 4; i++) {
             int nextRow = row + rowMove[i];
             int nextCol = col + colMove[i];
             if(!(nextRow > n || nextRow < 1 || nextCol > n || nextCol < 1)){
-                if(isOpen(nextRow, nextCol)){
+                if(status[nextRow][nextCol] == Status.OPENED){
                     sites.union(hashID(nextRow, nextCol), hashID(row, col));
                 }
             }
@@ -60,7 +62,7 @@ public class Percolation {
     public boolean isOpen(int row, int col) {
         if(row > n || row < 1 || col > n || col < 1)
             throw new IllegalArgumentException("Out of size");
-        return status[row][col] == OPENED;
+        return status[row][col] == Status.OPENED;
     }
 
     public boolean isFull(int row, int col) {

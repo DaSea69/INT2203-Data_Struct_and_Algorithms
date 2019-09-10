@@ -34,7 +34,7 @@ public class PercolationStats {
                 break;
         }
         //System.out.printf("%d / %d \n", percolation.numberOfOpenSites(), n * n);
-        return (double) percolation.numberOfOpenSites() / (n * n);
+        return (double) percolation.numberOfOpenSites()/(n * n);
     }
 
     private void getResult() {
@@ -65,12 +65,12 @@ public class PercolationStats {
 
     // test client (see below)
     public static void main(String[] args) {
-            PercolationStats percolationStats = new PercolationStats(Integer.parseInt(args[0]),
+            /*PercolationStats percolationStats = new PercolationStats(Integer.parseInt(args[0]),
                     Integer.parseInt(args[1]));
-            //PercolationStats percolationStats = new PercolationStats(200, 100);
+            PercolationStats percolationStats = new PercolationStats(200, 100);
             System.out.println(percolationStats.mean());
             System.out.println(percolationStats.stddev());
-            System.out.printf("[%f - %f]", percolationStats.confidenceLo(), percolationStats.confidenceHi());
+            System.out.printf("[%f - %f]", percolationStats.confidenceLo(), percolationStats.confidenceHi()); */
     }
 
 }

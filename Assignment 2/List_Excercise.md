@@ -11,10 +11,10 @@
 Bien Nguyen Dinh (Mr.)  
 University of Engineering and Technology, Vietnam National University.
 
-[percolation]: ./percolation/Percolation.java "Percolation"
-[percolationStats]: ./percolation/PercolationStats.java "Percolation Stats"
+[percolation]: ./percolation/src/Percolation.java "Percolation"
+[percolationStats]: ./percolation/src/PercolationStats.java "Percolation Stats"
 [Kary]: ./Kary.java "Kary"
 [GCD]: ./GCD.java "GCD"
 [PrimeCounter]: ./PrimeCounter.java
-[UFClient]: ./UFClient/UFClient.java
+[UFClient]: ./UFClient/src/UFClient.java
 [Exp]: ./Exp.java
