@@ -17,6 +17,8 @@ bin/*
 # input and output check file
 *.inp
 *.out
+algs4-data/
+
 
 # workspace file
 
